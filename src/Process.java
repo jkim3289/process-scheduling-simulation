@@ -1,0 +1,13 @@
+public class Process {
+    int processID;
+    int arrivalTime;
+    int burstTime;
+    int memoryRequired;
+
+    public Process(int processID, int arrivalTime, int burstTime, int memoryRequired) {
+        this.processID = processID;
+        this.arrivalTime = arrivalTime;
+        this.burstTime = burstTime;
+        this.memoryRequired = memoryRequired;
+    }
+}
