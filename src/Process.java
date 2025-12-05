@@ -23,8 +23,6 @@ public class Process {
     /**
      * Constructor for Process
      *
-     * Initializes a new process with the given parameters.
-     * startTime is initialized to 0 and will be set by the scheduling algorithm.
      *
      * @param processID Unique identifier for the process
      * @param arrivalTime Time when process arrives in the system

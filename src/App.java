@@ -11,16 +11,12 @@ import java.util.Scanner;
  * This program simulates CPU scheduling algorithms (FCFS and SJF) and displays
  * a Gantt chart along with performance metrics (Waiting Time and Turnaround Time).
  *
- * Supports:
+ * Methods Implemented:
  * - FCFS (First-Come, First-Served): Non-preemptive scheduling based on arrival time
  * - SJF (Shortest Job First): Non-preemptive scheduling based on burst time
  */
 public class App {
     /**
-     * Main entry point for the process scheduling simulator.
-     * Prompts user to select scheduling algorithm and test file,
-     * then executes the selected algorithm and displays results.
-     *
      * @param args Command line arguments (not used)
      * @throws Exception If file I/O errors occur
      */
@@ -71,8 +67,6 @@ public class App {
         String selectedFile = testFiles[fileChoice - 1];
 
         // Read process data from selected file
-        // File format: Each line contains space-separated values:
-        // ProcessID ArrivalTime BurstTime MemoryRequired
         List<Process> processList = new ArrayList<>();
         BufferedReader br = new BufferedReader(new FileReader(selectedFile));
         try {
@@ -110,15 +104,6 @@ public class App {
     /**
      * First-Come, First-Served (FCFS) Scheduling Algorithm
      *
-     * Non-preemptive scheduling where processes are executed in order of arrival.
-     * The process that arrives first is executed first.
-     *
-     * Algorithm:
-     * 1. Sort processes by arrival time
-     * 2. Execute each process in order
-     * 3. If CPU is idle when a process arrives, start immediately
-     * 4. Otherwise, process waits until CPU is free
-     *
      * @param processList List of processes to schedule
      */
     public static void fcfs(List<Process> processList) {
@@ -146,16 +131,6 @@ public class App {
 
     /**
      * Shortest Job First (SJF) Scheduling Algorithm
-     *
-     * Non-preemptive scheduling where the process with the shortest burst time
-     * is selected from the ready queue. Minimizes average waiting time.
-     *
-     * Algorithm:
-     * 1. Sort processes by arrival time initially
-     * 2. Use a priority queue (min-heap) to select shortest job from ready processes
-     * 3. At each time point, add all newly arrived processes to the queue
-     * 4. Execute the process with minimum burst time
-     * 5. If no process is ready, advance time to next arrival
      *
      * @param processList List of processes to schedule
      */
@@ -193,28 +168,8 @@ public class App {
         displayGanttChart(result);
     }
 
-    // public static void printProcessList(List<Process> processList) {
-    //     for (Process x : processList) {
-    //         System.out.println(x.processID);
-    //         System.out.println(x.arrivalTime);
-    //         System.out.println(x.burstTime);
-    //         System.out.println(x.memoryRequired);
-    //         System.out.println();
-    //     }
-    //     System.out.println();
-    // }
-
     /**
      * Display Gantt Chart and Performance Metrics
-     *
-     * Creates a visual Gantt chart showing process execution timeline,
-     * and calculates performance metrics for each process.
-     *
-     * Displays:
-     * - Gantt chart with process execution blocks and idle times
-     * - Timeline with start/end times
-     * - Per-process details (PID, arrival, burst, start, finish, WT, TAT)
-     * - Average Waiting Time and Turnaround Time
      *
      * Performance Metrics:
      * - Waiting Time (WT) = Turnaround Time - Burst Time
