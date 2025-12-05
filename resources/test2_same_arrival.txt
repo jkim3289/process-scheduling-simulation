@@ -1,0 +1,5 @@
+PID Arrival_Time Burst_Time Memory
+1 0 10 100
+2 0 5 200
+3 0 2 150
+4 0 8 300
