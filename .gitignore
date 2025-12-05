@@ -1,26 +1,42 @@
-# Ignore compiled Java classes
+#############################
+# Java compiled files
+#############################
+# Ignore ONLY class files in any folder
 *.class
 
-# Ignore IDE/editor specific files
-*.iml
-*.log
-.vscode/
-.idea/
-
-# Ignore build directories
+#############################
+# Build / output directories
+#############################
+# Ignore bin directory, but KEEP src/
 bin/
+
+# (Optional, if you ever use them)
 build/
 out/
 target/
 
-# Ignore OS-generated files
+#############################
+# IDE / editor specific
+#############################
+.vscode/
+.idea/
+*.iml
+*.log
+
+#############################
+# OS-specific junk
+#############################
 .DS_Store
 Thumbs.db
 
-# Ignore temporary files
+#############################
+# Temp files
+#############################
 *.tmp
 *.swp
 *.bak
 
-# Ignore environment files (if any)
+#############################
+# Environment files
+#############################
 .env
