@@ -10,11 +10,6 @@
 # Ignore bin directory, but KEEP src/
 bin/
 
-# (Optional, if you ever use them)
-build/
-out/
-target/
-
 #############################
 # IDE / editor specific
 #############################
